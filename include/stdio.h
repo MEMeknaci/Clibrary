@@ -15,7 +15,7 @@ int puts(const char *s);
 int my_remove(char *pathname);
 int my_printf(char *s, ...);
 
-// printf fcts prototypes //
+/* printf fcts prototypes */
 int my_put_nbr(int nb);
 int my_putstr(char const *str);
 int my_strlen(char *str);
