@@ -15,7 +15,7 @@ static int get_len(char *str)
 {
     int i = 0;
     for(; str[i]; i++);
-    return(i);
+    return (i);
 }
 
 static void my_werror(char *str)
@@ -23,7 +23,7 @@ static void my_werror(char *str)
     write(2, str, get_len(str));
 }
 
-char *my_strcat(char *dest, char *src)
+static char *my_strcat(char *dest, char *src)
 {
     int dest_len = get_len(dest);
     int src_len = get_len(src);
