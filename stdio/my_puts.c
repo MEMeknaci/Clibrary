@@ -14,5 +14,6 @@ int my_puts(const char *s)
 
     for (i = 0; s[i]; i++);
     write(1, s, i);
+    write(1, "\n", 1);
     return (0);
 }

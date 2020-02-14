@@ -34,9 +34,3 @@ int my_printf(char *s, ...)
     va_end(ap);
     return (0);
 }
-
-void main(void)
-{
-    char *res = "lol";
-    my_printf("%s\n", res);
-}
