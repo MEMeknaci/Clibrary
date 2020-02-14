@@ -24,9 +24,3 @@ double my_round(double value)
     }
     return (data);
 }
-
-int main(void)
-{
-    printf("%f\n", my_round(-0));
-    return (0);
-}
