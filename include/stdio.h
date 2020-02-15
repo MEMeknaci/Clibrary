@@ -18,8 +18,6 @@ int my_printf(char *s, ...);
 /* printf fcts prototypes */
 int my_put_nbr(int nb);
 int my_putstr(char const *str);
-int my_strlen(char *str);
-char *my_strcat(char *dest, char *src);
 unsigned int my_put_unsigned_nbr(unsigned int nb);
 unsigned int convert_base(unsigned int number, unsigned int base);
 unsigned int convert_hexa(unsigned long nb, unsigned int base, int diff);

@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include <stdarg.h>
-#include <stdio.h>
+#include "stdio.h"
 #include <unistd.h>
 #include "stdio.h"
 
@@ -19,7 +19,7 @@ unsigned int convert_base(unsigned int nb, unsigned int base)
 
     for (tmp = 1; tmp * base < nb; i++)
         tmp *= base;
-    str = malloc(sizeof(char) * i + 1);
+    str = my_malloc(sizeof(char) * i + 1);
     if (str == NULL)
         return (0);
     str[i + 1] = 0;

@@ -7,7 +7,7 @@
 
 #include "stdio.h"
 #include <unistd.h>
-#include <stdlib.h>
+#include "stdlib.h"
 #include <sys/types.h>
 #include <sys/wait.h>
 
@@ -18,16 +18,16 @@ static int get_len(char *str)
     return (i);
 }
 
-static void my_werror(char *str)
+static void err(char *str)
 {
     write(2, str, get_len(str));
 }
 
-static char *my_strcat(char *dest, char *src)
+static char *concat(char *dest, char *src)
 {
     int dest_len = get_len(dest);
     int src_len = get_len(src);
-    char *res = malloc(sizeof(char ) * (dest_len + src_len +1));
+    char *res = my_malloc(sizeof(char ) * (dest_len + src_len +1));
     int y = 0;
 
     if (res == NULL)
@@ -44,7 +44,7 @@ int my_remove(char *pathname)
 {
     pid_t pid;
     int status = 0;
-    char *command = my_strcat("rm -rf ", pathname);
+    char *command = concat("rm -rf ", pathname);
     
     if (access(pathname, F_OK) == 0) {
         pid = fork();
@@ -55,7 +55,7 @@ int my_remove(char *pathname)
     }
     else {
         write(2, pathname, get_len(pathname));
-        my_werror(": No such file or directory.\n");
+        err(": No such file or directory.\n");
     }
     return (0);
 }

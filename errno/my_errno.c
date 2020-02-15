@@ -6,6 +6,7 @@
 */
 
 #include "errno.h"
+#include <unistd.h>
 
 void putstring(char *str)
 {
